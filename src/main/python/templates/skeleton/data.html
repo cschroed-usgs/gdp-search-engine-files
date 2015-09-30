@@ -25,4 +25,12 @@
 	<li>{{gdp_algorithm}}</li>
 {% endfor %}
 </ul>
+
+<form action="dummy_post" method="post">
+	{% for form_field in form_fields %}
+		<label for="{{form_field.machine}}">{{form_field.human}}</label><input id="{{form_field.machine}}" type="text"/>
+	{% endfor %}
+	<button type="submit">Submit</button>
+</form>
+
 {% endblock %}

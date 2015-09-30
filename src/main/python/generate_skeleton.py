@@ -58,7 +58,17 @@ def main(argv):
 
     args = gc.parse_args(sys.argv)
     csw_endpoint = args.csw_endpoint
-
+    human_form_inputs = [
+        'Selected Area of Interest',
+        'Selected Attribute',
+        'Number of Selected Values',
+        'Data Source URL',
+        'Number of Selected Variables',
+        'Date Range',
+        'Algorithm Selected',
+        'Email',
+        'Filename'
+    ]
     context = {
                u'root_url' : u'' + args.root_url,
                u'last_modified' : u'' + datetime.datetime.now().strftime('%Y-%m-%d'),
@@ -69,6 +79,9 @@ def main(argv):
                         u'WCS Subset',
                         u'Categorical Coverage Fraction'
                     ]
+               u'gdp_form_inputs' : [
+                                    gc. 
+                                     ]
                }
 
     data = gc.get_gdp_data(csw_endpoint)
