@@ -58,7 +58,7 @@ def main(argv):
 
     args = gc.parse_args(sys.argv)
     csw_endpoint = args.csw_endpoint
-    human_form_inputs = [
+    human_form_fields = [
         'Selected Area of Interest',
         'Selected Attribute',
         'Number of Selected Values',
@@ -69,6 +69,9 @@ def main(argv):
         'Email',
         'Filename'
     ]
+    form_fields = map(lambda humanInput: {'human' : humanInput, 'machine':gc.varStr(humanInput)}, human_form_fields)
+    
+        
     context = {
                u'root_url' : u'' + args.root_url,
                u'last_modified' : u'' + datetime.datetime.now().strftime('%Y-%m-%d'),
@@ -78,11 +81,9 @@ def main(argv):
                         u'OPeNDAP Subset',
                         u'WCS Subset',
                         u'Categorical Coverage Fraction'
-                    ]
-               u'gdp_form_inputs' : [
-                                    gc. 
-                                     ]
-               }
+                    ],
+               u'gdp_form_fields' : form_fields
+           }
 
     data = gc.get_gdp_data(csw_endpoint)
     generate_skeleton(data, args.destination_dir, context)
