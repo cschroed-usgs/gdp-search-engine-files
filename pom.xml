@@ -125,7 +125,7 @@
 									<commandlineArgs>generate_sitemap.sh ${gdp.search-engine-files.web-accessible-dir} ${gdp.search-engine-files.csw-endpoint}</commandlineArgs>
 								</configuration>
 							</execution>
-<!--							<execution>
+							<execution>
 								<id>skeleton-generation</id>
 								<phase>prepare-package</phase>
 								<goals>
@@ -136,7 +136,7 @@
 									<workingDirectory>src/main/python</workingDirectory>
 									<commandlineArgs>generate_skeleton.sh ${project.build.outputDirectory}/skeleton ${gdp.search-engine-files.csw-endpoint}</commandlineArgs>
 								</configuration>
-							</execution>-->
+							</execution>
 						</executions>
 
 					
