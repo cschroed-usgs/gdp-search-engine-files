@@ -1,14 +1,29 @@
 {% extends "base.html" %}
-{% block title%}Data Detail - {{title}}{% endblock %}
-{% block description %}View the details of the &quot;{{title}}&quot; dataset used by the National Water Census Data Portal{% endblock %}
+{% block title%}Process the Dataset &quot;{{title}}&quot;{% endblock %}
+{% block description %}Process the dataset &quot;{{title}}&quot; via the USGS Geo Data Portal. Potentially applicable algorithms include
+{% for gdp_algorithm in gdp_algorithms %}
+	{% if loop.last %} and {{gdp_algorithm}}.{% else %}{{gdp_algorithm}},{% endif %}
+{% endfor %}
+{% endblock %}
 {% block body %}
-<h1>Data Details</h1>
+<h1>Dataset Metadata</h1>
 <dl>
 	<dt>Title</dt>
 	<dd>{{title}}</dd>
-	<dt>Summary</dt>
-	<dd>{{summary}}</dd>
-	<dt>Source</dt>
-	<dd><a href="{{link.url}}">View Data in ScienceBase</a></dd>
+	<dt>Abstract</dt>
+	<dd>{{abstract}}</dd>
 </dl>
+<h2>Dataset References</h2>
+<ul>
+{% for reference in references %}
+	<li><a href="{{reference.url}}">{{reference.url}}</a></li>	
+{% endfor %}
+</ul>
+<h2>Potentially Applicable Algorithms</h2>
+<ul>
+{% for gdp_algorithm in gdp_algorithms %}
+	<li>{{gdp_algorithm}}</li>
+{% endfor %}
+</ul>
+
 {% endblock %}

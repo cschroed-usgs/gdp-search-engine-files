@@ -1,12 +1,8 @@
-import sys
 import argparse
-import math
-import requests
-from types import NoneType
 import os
 import errno
 from owslib.csw import CatalogueServiceWeb 
-
+import re
 
 
 """
