@@ -52,13 +52,6 @@ def get_gdp_data(csw_endpoint):
             'datasets' : get_datasets(csw_endpoint),
     }
 
-'''
-convert a potentially dirty string into a valid python identifier
-http://stackoverflow.com/a/3305731
-'''
-def varStr(dirtyString):
-    return re.sub('\W|^(?=\d)', '_', dirtyString)
-
 def make_sure_path_exists(path):
     try:
         os.makedirs(path)

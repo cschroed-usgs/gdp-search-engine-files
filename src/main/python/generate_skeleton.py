@@ -57,20 +57,7 @@ def generate_skeleton(data, destination_dir, context):
 def main(argv):
 
     args = gc.parse_args(sys.argv)
-    csw_endpoint = args.csw_endpoint
-    human_form_fields = [
-        'Selected Area of Interest',
-        'Selected Attribute',
-        'Number of Selected Values',
-        'Data Source URL',
-        'Number of Selected Variables',
-        'Date Range',
-        'Algorithm Selected',
-        'Email',
-        'Filename'
-    ]
-    form_fields = map(lambda humanInput: {'human' : humanInput, 'machine':gc.varStr(humanInput)}, human_form_fields)
-    
+    csw_endpoint = args.csw_endpoint  
         
     context = {
                u'root_url' : u'' + args.root_url,
@@ -81,8 +68,7 @@ def main(argv):
                         u'OPeNDAP Subset',
                         u'WCS Subset',
                         u'Categorical Coverage Fraction'
-                    ],
-               u'gdp_form_fields' : form_fields
+                    ]
            }
 
     data = gc.get_gdp_data(csw_endpoint)
