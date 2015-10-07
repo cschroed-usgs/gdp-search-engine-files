@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>gov.usgs.cida.gdp</groupId>
 	<artifactId>search-engine-files</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<packaging>jar</packaging>
 
 	<name>GDP Search Engine Files</name>
@@ -56,6 +56,7 @@
 		<url>https://github.com/USGS-CIDA/gdp-search-engine-files</url>
 		<connection>scm:git:git@github.com:USGS-CIDA/gdp-search-engine-files.git</connection>
 		<developerConnection>scm:git:git@github.com:USGS-CIDA/gdp-search-engine-files.git</developerConnection>
+    <tag>search-engine-files-0.1.0</tag>
   </scm>
 	<distributionManagement>
 		<repository>
