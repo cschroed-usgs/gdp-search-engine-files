@@ -61,14 +61,7 @@ def main(argv):
         
     context = {
                u'root_url' : u'' + args.root_url,
-               u'last_modified' : u'' + datetime.datetime.now().strftime('%Y-%m-%d'),
-               u'gdp_algorithms' : [
-                        u'Weighted Area Grid Statistics',
-                        u'Unweighted Area Grid Statistics',
-                        u'OPeNDAP Subset',
-                        u'WCS Subset',
-                        u'Categorical Coverage Fraction'
-                    ]
+               u'last_modified' : u'' + datetime.datetime.now().strftime('%Y-%m-%d')
            }
 
     data = gc.get_gdp_data(csw_endpoint)

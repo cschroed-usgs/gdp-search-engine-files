@@ -1,23 +1,23 @@
 {% extends "base.html" %}
-{% block title%}Process the Dataset &quot;{{title}}&quot;{% endblock %}
 {% block description %}Process the dataset &quot;{{title}}&quot; via the USGS Geo Data Portal. Potentially applicable algorithms include
 {% for gdp_algorithm in gdp_algorithms %}
 	{% if loop.last %} and {{gdp_algorithm}}.{% else %}{{gdp_algorithm}},{% endif %}
 {% endfor %}
 {% endblock %}
 {% block body %}
-<h1>Dataset Metadata</h1>
+<h1>Welcome to the USGS Geo Data Portal</h1>
+<p>This page is a catalog of the datasets that have been tested to work well for access with the Geo Data Portal (GDP). Select a dataset below to see more details and access it.</p>
+
+<p><a href="https://my.usgs.gov/confluence/display/GeoDataPortal/GDP+Home">For more information about the GDP, please visit the documentation home here.</a></p>
+
+<p>The increasing availability of downscaled climate projections and other large data products that summarize or predict climate and land use conditions, is making use of these data more common in research and management. Scientists and decision makers often need to construct ensembles and compare climate hindcasts and future projections for particular spatial areas. These tasks generally require an investigator to procure all datasets of interest en masse, integrate the various data formats and representations into commonly accessible and comparable formats, and then extract the subsets of the datasets that are actually of interest. This process can be challenging and time intensive due to data-transfer, -storage, and(or) -processing limits, or unfamiliarity with methods of accessing climate and land use data. Data management for modeling and assessing the impacts of future climate conditions is also becoming increasingly expensive due to the size of the datasets. The Geo Data Portal addresses these limitations, making access to numerous climate datasets for particular areas of interest a simple and efficient task.</p>
+
+<h2>Dataset Metadata</h2>
 <dl>
 	<dt>Title</dt>
 	<dd>{{title}}</dd>
 	<dt>Abstract</dt>
 	<dd>{{abstract}}</dd>
 </dl>
-<h2>Potentially Applicable Algorithms</h2>
-<ul>
-{% for gdp_algorithm in gdp_algorithms %}
-	<li>{{gdp_algorithm}}</li>
-{% endfor %}
-</ul>
 
 {% endblock %}

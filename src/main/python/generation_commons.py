@@ -11,7 +11,7 @@ Retrieve csw records of GDP data sets from the csw endpoint
 
 """
 def get_datasets_from_csw(csw_endpoint):
-    csw = CatalogueServiceWeb('http://cida.usgs.gov/gdp/csw/')
+    csw = CatalogueServiceWeb(csw_endpoint)
     csw.getrecords2(esn='full', maxrecords=1000)
     return csw.records.values()
 
