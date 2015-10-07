@@ -1,7 +1,6 @@
 import sys
 import datetime
 import generation_commons as gc
-from jinja2 import Template
 from jinja2 import FileSystemLoader
 from jinja2.environment import Environment
 import math
@@ -85,7 +84,7 @@ def main(argv):
                'root_url' : args.root_url,
                'last_modified' : datetime.datetime.now().strftime('%Y-%m-%d')
                }
-    data = gc.get_gdp_data(csw_endpoint)
+    data = gc.get_datasets_from_csw(csw_endpoint, False)
 
     generate_sitemap(data, args.destination_dir, context)
 

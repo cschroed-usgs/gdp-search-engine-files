@@ -1,8 +1,6 @@
 import sys
 import datetime
 import generation_commons as gc
-from jinja2 import Template
-import math
 import hashlib
 import os
 from jinja2 import FileSystemLoader
@@ -64,7 +62,7 @@ def main(argv):
                u'last_modified' : u'' + datetime.datetime.now().strftime('%Y-%m-%d')
            }
 
-    data = gc.get_gdp_data(csw_endpoint)
+    data = gc.get_datasets_from_csw(csw_endpoint, True)
     generate_skeleton(data, args.destination_dir, context)
 
 if __name__=="__main__":
