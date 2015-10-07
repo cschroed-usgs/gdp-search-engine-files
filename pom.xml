@@ -15,7 +15,7 @@
 	</organization>
 	<properties>
 		<gdp.search-engine-files.web-accessible-dir>${project.build.outputDirectory}/META-INF/resources/</gdp.search-engine-files.web-accessible-dir>
-		<gdp.search-engine-files.csw-endpoint>https://cida.usgs.gov/gdp/csw</gdp.search-engine-files.csw-endpoint>
+		<gdp.search-engine-files.csw-endpoint>http://cida.usgs.gov/gdp/csw/</gdp.search-engine-files.csw-endpoint>
 	</properties>
 	<licenses>
 		<license>
